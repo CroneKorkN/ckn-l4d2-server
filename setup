@@ -1,0 +1,13 @@
+#!/bin/bash
+
+adduser steam --quiet
+
+if ! ls /home/steam/steam_workshop_downloader; then
+  git clone https://github.com/Geam/steam_workshop_downloader.git /home/steam/steam_workshop_downloader
+fi
+git pull --git-dir /home/steam/steam_workshop_downloader/.git
+
+mkdir /home/steam/steam
+wget -c -P /home/steam/steam http://media.steampowered.com/installer/steamcmd_linux.tar.gz
+
+
